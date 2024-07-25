@@ -1,3 +1,54 @@
+
+
+<!-- 
+ __    __             __      __                   __                                      __                __         
+|  \  |  \           |  \    |  \                 |  \                                    |  \              |  \        
+| $$\ | $$  ______  _| $$_   | $$____    ______  _| $$_     ______    ______    _______  _| $$_     ______  | $$        
+| $$$\| $$ |      \|   $$ \  | $$    \  |      \|   $$ \   /      \  |      \  /       \|   $$ \   /      \ | $$        
+| $$$$\ $$  \$$$$$$\\$$$$$$  | $$$$$$$\  \$$$$$$\\$$$$$$  |  $$$$$$\  \$$$$$$\|  $$$$$$$ \$$$$$$  |  $$$$$$\| $$        
+| $$\$$ $$ /      $$ | $$ __ | $$  | $$ /      $$ | $$ __ | $$  | $$ /      $$ \$$    \   | $$ __ | $$    $$| $$        
+| $$ \$$$$|  $$$$$$$ | $$|  \| $$  | $$|  $$$$$$$ | $$|  \| $$__/ $$|  $$$$$$$ _\$$$$$$\  | $$|  \| $$$$$$$$| $$        
+| $$  \$$$ \$$    $$  \$$  $$| $$  | $$ \$$    $$  \$$  $$| $$    $$ \$$    $$|       $$   \$$  $$ \$$     \| $$        
+ \$$   \$$  \$$$$$$$   \$$$$  \$$   \$$  \$$$$$$$   \$$$$ | $$$$$$$   \$$$$$$$ \$$$$$$$     \$$$$   \$$$$$$$ \$$        
+                                                          | $$                                                          
+                                                          | $$                                                          
+                                                           \$$                                                          
+                         __                                                                                             
+                        |  \                                                                                            
+                         \$$  _______         ______                                                                    
+                        |  \ /       \       |      \                                                                   
+                        | $$|  $$$$$$$        \$$$$$$\                                                                  
+                        | $$ \$$    \        /      $$                                                                  
+                        | $$ _\$$$$$$\      |  $$$$$$$                                                                  
+                        | $$|       $$       \$$    $$                                                                  
+                         \$$ \$$$$$$$         \$$$$$$$                                                                  
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                     __                      __        __  __           
+                                                                    |  \                    |  \      |  \|  \          
+                                            ______    ______    ____| $$  ______    ______  | $$____   \$$| $$  ______  
+                                           /      \  /      \  /      $$ /      \  /      \ | $$    \ |  \| $$ /      \ 
+                                          |  $$$$$$\|  $$$$$$\|  $$$$$$$|  $$$$$$\|  $$$$$$\| $$$$$$$\| $$| $$|  $$$$$$\
+                                          | $$  | $$| $$    $$| $$  | $$| $$  | $$| $$  | $$| $$  | $$| $$| $$| $$    $$
+                                          | $$__/ $$| $$$$$$$$| $$__| $$| $$__/ $$| $$__/ $$| $$  | $$| $$| $$| $$$$$$$$
+                                          | $$    $$ \$$     \ \$$    $$ \$$    $$| $$    $$| $$  | $$| $$| $$ \$$     \
+                                          | $$$$$$$   \$$$$$$$  \$$$$$$$  \$$$$$$ | $$$$$$$  \$$   \$$ \$$ \$$  \$$$$$$$
+                                          | $$                                    | $$                                  
+                                          | $$                                    | $$                                  
+                                           \$$                                     \$$                                  
+-->
+
+
+
+
+
+
+
+
+
+
+<noscript>YOUR BROWSER FUCKING SUCKS!!!!!!</noscript>
 <html>
 
 <head>
@@ -5,7 +56,155 @@
 </head>
 
 <body>
-    <center><a href="https://steamcommunity.com/profiles/76561199468409252">nathatpastel</a></center>
+    <audio id="DJ-pedo" controls>
+        <source src="https://cdn.discordapp.com/attachments/1250862236944302182/1266011930879852646/DJ_PEDOPHILE_EXCLUSIVE_che_slump6s_osamason_man_-_arqez.mp3?ex=66a398fd&is=66a2477d&hm=4cc0ed00dcaa93d0ca5cf511bea3dc80211199cde8e91206ac705545fd300a9a&" type="audio/mp3">
+        Your browser. IT FUCKING SUCKS
+    </audio>
+
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">Click Anywhere</div>
+    </div>
+    
+    <div class="center-box">
+        <img class="pfp-img" src="https://avatars.akamai.steamstatic.com/a987e2d96d37a90e084a478b0764f1ec52356977_full.jpg">
+        <div class="line"></div>
+
+    
+        <p class="username"> Username: Nathatpastel </p>
+        <p class="username"> Crimes: Pedophile </p>
+        <a href="https://steamcommunity.com/profiles/76561199468409252">Steam</a>
+    </div>
 </body>
+
+<!-- webdev crimes below  -->
+
+<script>
+const audioPlayer = document.getElementById('DJ-pedo');
+
+audioPlayer.loop = true;
+
+
+document.getElementById('overlay').addEventListener('click', function() {
+    this.style.display = 'none';
+    this.style.pointerEvents = 'none';
+    audioPlayer.play();
+});
+
+// title bar
+class TitleScroller {
+    constructor(title, interval = 300) {
+        this.title = title;
+        this.interval = interval;
+        this.position = 0;
+        this.intervalId = null;
+    }
+    
+    start() {
+        if (this.intervalId) return;
+            this.intervalId = setInterval(() => {
+            document.title = this.getNextTitle();
+        }, this.interval);
+    }
+    
+    stop() {
+        if (this.intervalId) {
+            clearInterval(this.intervalId);
+            this.intervalId = null;
+            document.title = this.title;
+        }
+    }
+    
+    getNextTitle() {
+        this.position = (this.position + 1) % this.title.length;
+        return this.title.slice(this.position) + this.title.slice(0, this.position);
+    }
+}
+
+const scroller = new TitleScroller("Nathatpastel is a pedophile. ", 100);
+scroller.start();
+</script>
+
+<style>
+
+body {
+    background-color: #121212;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.97);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    z-index: 1000;
+}
+
+.overlay-content {
+    text-align: center;
+}
+
+.line {
+    width: calc(100% - 2px);
+    height: 1px;
+    background-color: rgb(122, 122, 122);
+    margin: 0 2px;
+}
+
+.center-box {
+    position: absolute;
+    margin-left: auto;
+    margin-top: auto;
+
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 120px 10px rgb(119, 0, 255);
+
+    /* text-align: center; */
+    z-index: 2;
+}
+
+/* Default styles for portrait orientation */
+.center-box {
+    width: 95%;
+    height: 70%;
+    overflow: hidden;
+
+    text-align: center;
+}
+
+/* Styles for landscape orientation */
+@media (orientation: landscape) {
+    .center-box {
+        width: 30%;
+        height: 60%;
+    }
+}
+
+.pfp-img {
+
+    width: 100%;
+    height: 30%;
+    padding-bottom: 10px;
+    object-fit: contain;
+}
+
+</style>
 
 </html>
