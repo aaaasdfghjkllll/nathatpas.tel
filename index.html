@@ -52,12 +52,12 @@
 <html>
 
 <head>
-    <title>nathatpastel</title>
+    <title>Click Anywhere</title>
 </head>
 
 <body>
     <audio id="DJ-pedo" controls>
-        <source src="https://cdn.discordapp.com/attachments/1250862236944302182/1266011930879852646/DJ_PEDOPHILE_EXCLUSIVE_che_slump6s_osamason_man_-_arqez.mp3?ex=66a398fd&is=66a2477d&hm=4cc0ed00dcaa93d0ca5cf511bea3dc80211199cde8e91206ac705545fd300a9a&" type="audio/mp3">
+        <source src="/djpedophile.mp3" type="audio/mp3">
         Your browser. IT FUCKING SUCKS
     </audio>
 
@@ -66,7 +66,7 @@
     </div>
     
     <div class="center-box">
-        <img class="pfp-img" src="https://avatars.akamai.steamstatic.com/a987e2d96d37a90e084a478b0764f1ec52356977_full.jpg">
+        <img class="pfp-img" src="/nathatpastel.jpg">
         <div class="line"></div>
 
     
@@ -88,6 +88,8 @@ document.getElementById('overlay').addEventListener('click', function() {
     this.style.display = 'none';
     this.style.pointerEvents = 'none';
     audioPlayer.play();
+    const scroller = new TitleScroller("Nathatpastel is a pedophile. ", 100);
+    scroller.start();
 });
 
 // title bar
@@ -119,9 +121,6 @@ class TitleScroller {
         return this.title.slice(this.position) + this.title.slice(0, this.position);
     }
 }
-
-const scroller = new TitleScroller("Nathatpastel is a pedophile. ", 100);
-scroller.start();
 </script>
 
 <style>
