@@ -179,8 +179,6 @@ function initializeMain() {
 
             document.querySelector("html").style = "cursor: none;"
 
-            audio.play()
-
             logout()
         }
     })
